@@ -62,4 +62,9 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def more
+    movie = Movie.find(params[:id])
+    @movies = Movie.more_movies_by_director(movie.director)
+  end
+  
 end

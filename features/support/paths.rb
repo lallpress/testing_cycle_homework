@@ -24,6 +24,10 @@ module NavigationHelpers
       w=Movie.find_by_title!($1)
       movie_path(w)
       
+    when /^the Similar Movies page for "(.+)"$/
+      w=Movie.find_by_title!($1)
+      more_movies_path(w)
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
